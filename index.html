@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href="format.css">
+</head>
+<body>
+    <div class="background">
+        <h1> Move mouse up and down </h1>;
+        <div class="gif">
+            <img id="myImage" src="images/frame_004_delay-0.06s.gif">;
+        </div>
+    </div>
+
+
+    <script>
+       
+        let handleMousemove = (event) => {
+            // console.log(`mouse position: ${event.x}:${event.y}`);
+            var pos = Math.min(Math.round(event.y / window.innerHeight * 4), 3);
+            var image = ("images/frame_00" + String(4 + pos) + ".gif");
+            console.log(image);
+            document.getElementById('myImage').src=image;
+           
+        };
+
+        document.addEventListener('mousemove', handleMousemove);
+    </script>
+</body>
+</html>
